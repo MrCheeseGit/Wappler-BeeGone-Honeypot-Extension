@@ -53,7 +53,7 @@
     ],
     "notes": [
       "Place dmx-beegone-honeypot inside each form on the page.",
-      "npm users: run the Mr Cheese npm install assistant copy script after npm install (Project Updater alone is not enough).",
+      "npm: Project Settings → Extensions, npm install, Project Updater, then quit Wappler completely and reopen.",
       "Quit Wappler completely and reopen."
     ]
   }
