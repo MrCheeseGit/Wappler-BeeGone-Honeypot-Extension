@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.4
+## 1.0.5
 
 Current release of **BeeGone Honeypot**. See [README](README.md) for features, installation, and usage.
 
