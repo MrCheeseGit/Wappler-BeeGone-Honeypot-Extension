@@ -1,0 +1,113 @@
+{
+  "type": "beegone_validate",
+  "module": "beegone",
+  "action": "validate",
+  "groupTitle": "Mr Cheese",
+  "groupIcon": "fas fa-lg fa-cheese comp-exec",
+  "title": "BeeGone Validate Honeypot",
+  "icon": "fas fa-lg fa-bug comp-flows",
+  "outputType": "object",
+  "serverModel": [
+    "node"
+  ],
+  "help": "Validate a honeypot field from the form POST. Use with dmx-beegone-honeypot on the page. Bind honeypot value from $_POST (field name must match the component). Chain a Condition on {{stepName.passed}} before insert or mail steps.",
+  "dataScheme": [
+    {
+      "name": "passed",
+      "type": "boolean"
+    },
+    {
+      "name": "isBot",
+      "type": "boolean"
+    },
+    {
+      "name": "reason",
+      "type": "text"
+    }
+  ],
+  "dataPickObject": true,
+  "properties": [
+    {
+      "group": "BeeGone",
+      "variables": [
+        {
+          "name": "actionName",
+          "optionName": "name",
+          "title": "Name",
+          "type": "text",
+          "required": true,
+          "defaultValue": "",
+          "baseName": "beegone",
+          "help": "Step name for bindings (e.g. {{beegone.passed}}, {{beegone.isBot}})"
+        },
+        {
+          "name": "actionOutput",
+          "optionName": "output",
+          "title": "Output",
+          "type": "boolean",
+          "initValue": true,
+          "defaultValue": false,
+          "help": "Expose passed / isBot / reason in the API response and App Connect picker"
+        },
+        {
+          "name": "honeypotValue",
+          "optionName": "honeypotValue",
+          "title": "Honeypot field value",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Bind the trap field from POST, e.g. {{$_POST.beegone_contact}} - must match dmx-beegone-honeypot field-name on the form"
+        },
+        {
+          "name": "expectedValue",
+          "optionName": "expectedValue",
+          "title": "Expected value",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Usually empty. Bots fill the trap; humans leave it blank."
+        },
+        {
+          "name": "minSeconds",
+          "optionName": "minSeconds",
+          "title": "Minimum seconds on page",
+          "type": "numberorstring",
+          "serverDataBindings": true,
+          "defaultValue": 0,
+          "help": "0 = off. If set, bind timestamp from POST (e.g. {{$_POST.beegone_ts_contact}}) and reject submits faster than this."
+        },
+        {
+          "name": "timestampValue",
+          "optionName": "timestampValue",
+          "title": "Timestamp field value",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Optional. Bind {{$_POST.beegone_ts_yourId}} when using min seconds and the BeeGone timestamp field."
+        },
+        {
+          "name": "onBot",
+          "optionName": "onBot",
+          "title": "When validation fails",
+          "type": "droplist",
+          "defaultValue": "flag",
+          "values": [
+            {
+              "title": "Flag only (use Condition)",
+              "value": "flag"
+            },
+            {
+              "title": "Reject API (throw error)",
+              "value": "reject"
+            },
+            {
+              "title": "Flag only (silent, same as flag)",
+              "value": "silent"
+            }
+          ],
+          "help": "flag/silent: branch with Condition on {{stepName.passed}}. reject: stops the API with an error."
+        }
+      ]
+    }
+  ]
+}

@@ -83,13 +83,13 @@ Run from your **Wappler project root** (the folder that contains `package.json`)
 ```bash
 git clone https://github.com/MrCheeseGit/Wappler-BeeGone-Honeypot-Extension.git ../Wappler-BeeGone-Honeypot-Extension
 
-cp ../Wappler-BeeGone-Honeypot-Extension/beegone_validate.hjson extensions/server_connect/modules/
-cp ../Wappler-BeeGone-Honeypot-Extension/beegone.js lib/modules/
-cp ../Wappler-BeeGone-Honeypot-Extension/beegone.js extensions/server_connect/modules/
+cp ../Wappler-BeeGone-Honeypot-Extension/server_connect/modules/beegone_validate.hjson extensions/server_connect/modules/
+cp ../Wappler-BeeGone-Honeypot-Extension/server_connect/modules/beegone.js lib/modules/
+cp ../Wappler-BeeGone-Honeypot-Extension/server_connect/modules/beegone.js extensions/server_connect/modules/
 
 cp ../Wappler-BeeGone-Honeypot-Extension/app_connect/components.hjson extensions/app_connect/components/beegone_components.hjson
-cp ../Wappler-BeeGone-Honeypot-Extension/app_connect/includes/dmx-beegone-honeypot.js public/js/
-cp ../Wappler-BeeGone-Honeypot-Extension/app_connect/includes/dmx-beegone-honeypot.css public/css/
+cp ../Wappler-BeeGone-Honeypot-Extension/includes/dmx-beegone-honeypot.js public/js/
+cp ../Wappler-BeeGone-Honeypot-Extension/includes/dmx-beegone-honeypot.css public/css/
 ```
 
 **Quit Wappler completely and restart.**

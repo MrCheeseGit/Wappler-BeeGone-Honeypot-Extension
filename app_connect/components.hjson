@@ -1,91 +1,101 @@
 {
-  components: [
+  "components": [
     {
-      type: 'dmx-beegone-honeypot'
-      selector: 'dmx-beegone-honeypot, [is=dmx-beegone-honeypot]'
-      framework: 'bootstrap5'
-      groupTitle: 'Mr Cheese'
-      groupIcon: 'fas fa-lg fa-cheese comp-exec'
-      title: 'BeeGone Honeypot: @@id@@'
-      icon: 'fas fa-lg fa-bug comp-data'
-      state: 'opened'
-      anyParent: true
-      template: '<dmx-beegone-honeypot id="@@id@@" field-name="beegone_@@id@@" timestamp-field-name="beegone_ts_@@id@@" min-seconds="3" design-label="Leave empty"><div class="beegone-hp-wrap" aria-hidden="true"><label class="beegone-hp-label" for="beegone_@@id@@_input">Leave empty</label><input type="text" name="beegone_@@id@@" id="beegone_@@id@@_input" class="beegone-hp-field" tabindex="-1" autocomplete="off" inputmode="text" value=""><input type="hidden" name="beegone_ts_@@id@@" id="beegone_ts_@@id@@_input" class="beegone-ts-field" value=""></div></dmx-beegone-honeypot>'
-      baseName: 'beegoneHp'
-      help: 'Spam honeypot for forms. Injects a hidden trap field (and optional timestamp) into the parent form. Pair with Server Connect BeeGone Validate Honeypot on your POST API. One component per form; field names must match $_POST bindings on the server.'
-
-      properties: [
+      "type": "dmx-beegone-honeypot",
+      "selector": "dmx-beegone-honeypot, [is=dmx-beegone-honeypot]",
+      "framework": "bootstrap5",
+      "groupTitle": "Mr Cheese",
+      "groupIcon": "fas fa-lg fa-cheese comp-exec",
+      "title": "BeeGone Honeypot: @@id@@",
+      "icon": "fas fa-lg fa-bug comp-data",
+      "state": "opened",
+      "anyParent": true,
+      "template": "<dmx-beegone-honeypot id=\"@@id@@\" field-name=\"beegone_@@id@@\" timestamp-field-name=\"beegone_ts_@@id@@\" min-seconds=\"3\" design-label=\"Leave empty\"><div class=\"beegone-hp-wrap\" aria-hidden=\"true\"><label class=\"beegone-hp-label\" for=\"beegone_@@id@@_input\">Leave empty</label><input type=\"text\" name=\"beegone_@@id@@\" id=\"beegone_@@id@@_input\" class=\"beegone-hp-field\" tabindex=\"-1\" autocomplete=\"off\" inputmode=\"text\" value=\"\"><input type=\"hidden\" name=\"beegone_ts_@@id@@\" id=\"beegone_ts_@@id@@_input\" class=\"beegone-ts-field\" value=\"\"></div></dmx-beegone-honeypot>",
+      "baseName": "beegoneHp",
+      "help": "Spam honeypot for forms. Injects a hidden trap field (and optional timestamp) into the parent form. Pair with Server Connect BeeGone Validate Honeypot on your POST API. One component per form; field names must match $_POST bindings on the server.",
+      "properties": [
         {
-          group: 'BeeGone Honeypot'
-          variables: [
+          "group": "BeeGone Honeypot",
+          "variables": [
             {
-              name: 'compId'
-              optionName: 'id'
-              attribute: 'id'
-              title: 'ID'
-              type: 'text'
-              required: true
-              defaultValue: ''
-            }
+              "name": "compId",
+              "optionName": "id",
+              "attribute": "id",
+              "title": "ID",
+              "type": "text",
+              "required": true,
+              "defaultValue": ""
+            },
             {
-              name: 'fieldName'
-              optionName: 'fieldName'
-              attribute: 'field-name'
-              title: 'Honeypot field name'
-              type: 'text'
-              defaultValue: 'beegone_@@id@@'
-              help: 'POST name for the trap input. Bind the same name in BeeGone Validate (e.g. {{$_POST.beegone_contact}}).'
-            }
+              "name": "fieldName",
+              "optionName": "fieldName",
+              "attribute": "field-name",
+              "title": "Honeypot field name",
+              "type": "text",
+              "defaultValue": "beegone_@@id@@",
+              "help": "POST name for the trap input. Bind the same name in BeeGone Validate (e.g. {{$_POST.beegone_contact}})."
+            },
             {
-              name: 'timestampFieldName'
-              optionName: 'timestampFieldName'
-              attribute: 'timestamp-field-name'
-              title: 'Timestamp field name'
-              type: 'text'
-              defaultValue: 'beegone_ts_@@id@@'
-              help: 'Hidden field set when the form loads. Leave empty to disable timing checks.'
-            }
+              "name": "timestampFieldName",
+              "optionName": "timestampFieldName",
+              "attribute": "timestamp-field-name",
+              "title": "Timestamp field name",
+              "type": "text",
+              "defaultValue": "beegone_ts_@@id@@",
+              "help": "Hidden field set when the form loads. Leave empty to disable timing checks."
+            },
             {
-              name: 'minSeconds'
-              optionName: 'minSeconds'
-              attribute: 'min-seconds'
-              title: 'Min seconds (server must match)'
-              type: 'number'
-              defaultValue: 3
-              help: 'Hint for authors. Set the same value on BeeGone Validate → Minimum seconds on page. 0 disables timing if timestamp field is also cleared.'
-            }
+              "name": "minSeconds",
+              "optionName": "minSeconds",
+              "attribute": "min-seconds",
+              "title": "Min seconds (server must match)",
+              "type": "number",
+              "defaultValue": 3,
+              "help": "Hint for authors. Set the same value on BeeGone Validate → Minimum seconds on page. 0 disables timing if timestamp field is also cleared."
+            },
             {
-              name: 'designLabel'
-              optionName: 'designLabel'
-              attribute: 'design-label'
-              title: 'Trap label text'
-              type: 'text'
-              defaultValue: 'Leave empty'
-              help: 'Decoy label on the hidden field (bots may read it). Not shown to sighted users on the live site.'
+              "name": "designLabel",
+              "optionName": "designLabel",
+              "attribute": "design-label",
+              "title": "Trap label text",
+              "type": "text",
+              "defaultValue": "Leave empty",
+              "help": "Decoy label on the hidden field (bots may read it). Not shown to sighted users on the live site."
             }
           ]
         }
+      ],
+      "children": [],
+      "allowed_children": {},
+      "copyFiles": [
+        {
+          "src": "includes/dmx-beegone-honeypot.js",
+          "dst": "js/dmx-beegone-honeypot.js"
+        },
+        {
+          "src": "includes/dmx-beegone-honeypot.css",
+          "dst": "css/dmx-beegone-honeypot.css"
+        }
+      ],
+      "linkFiles": [
+        {
+          "src": "css/dmx-beegone-honeypot.css",
+          "type": "css"
+        },
+        {
+          "src": "js/dmx-beegone-honeypot.js",
+          "type": "js",
+          "defer": true
+        }
+      ],
+      "cssOrder": [
+        "dmx-beegone-honeypot.css"
+      ],
+      "jsOrder": [
+        "dmx-beegone-honeypot.js"
       ]
-
-      children: []
-      allowed_children: {}
-
-      copyFiles: [
-        {src: 'includes/dmx-beegone-honeypot.js', dst: 'js/dmx-beegone-honeypot.js'}
-        {src: 'includes/dmx-beegone-honeypot.css', dst: 'css/dmx-beegone-honeypot.css'}
-      ]
-
-      linkFiles: [
-        {src: 'css/dmx-beegone-honeypot.css', type: 'css'}
-        {src: 'js/dmx-beegone-honeypot.js', type: 'js', defer: true}
-      ]
-
-      cssOrder: ['dmx-beegone-honeypot.css']
-      jsOrder: ['dmx-beegone-honeypot.js']
     }
-  ]
-
-  attributes: []
-
-  events: []
+  ],
+  "attributes": [],
+  "events": []
 }

@@ -14,15 +14,15 @@
     ],
     "copy": [
       {
-        "src": "beegone.js",
+        "src": "server_connect/modules/beegone.js",
         "dest": "lib/modules/beegone.js"
       },
       {
-        "src": "beegone.js",
+        "src": "server_connect/modules/beegone.js",
         "dest": "extensions/server_connect/modules/beegone.js"
       },
       {
-        "src": "beegone_validate.hjson",
+        "src": "server_connect/modules/beegone_validate.hjson",
         "dest": "extensions/server_connect/modules/beegone_validate.hjson"
       }
     ],
@@ -43,11 +43,11 @@
         "dest": "extensions/app_connect/components/beegone_components.hjson"
       },
       {
-        "src": "app_connect/includes/dmx-beegone-honeypot.js",
+        "src": "includes/dmx-beegone-honeypot.js",
         "dest": "public/js/dmx-beegone-honeypot.js"
       },
       {
-        "src": "app_connect/includes/dmx-beegone-honeypot.css",
+        "src": "includes/dmx-beegone-honeypot.css",
         "dest": "public/css/dmx-beegone-honeypot.css"
       }
     ],
