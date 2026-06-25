@@ -1,0 +1,67 @@
+{
+  "exec": {
+    "steps": [
+      {
+        "name": "beegone",
+        "module": "beegone",
+        "action": "validate",
+        "options": {
+          "honeypotValue": "{{$_POST.beegone_contact}}",
+          "expectedValue": "",
+          "minSeconds": 3,
+          "timestampValue": "{{$_POST.beegone_ts_contact}}",
+          "onBot": "flag"
+        },
+        "output": true,
+        "meta": [
+          { "name": "passed", "type": "boolean" },
+          { "name": "isBot", "type": "boolean" },
+          { "name": "reason", "type": "text" }
+        ],
+        "outputType": "object"
+      },
+      {
+        "name": "",
+        "module": "core",
+        "action": "condition",
+        "options": {
+          "if": "{{beegone.passed}}",
+          "then": {
+            "steps": [
+              {
+                "name": "ok",
+                "module": "core",
+                "action": "setvalue",
+                "options": {
+                  "value": {
+                    "success": true,
+                    "message": "Thank you - your message was received."
+                  }
+                },
+                "output": true,
+                "outputType": "object"
+              }
+            ]
+          },
+          "else": {
+            "steps": [
+              {
+                "name": "botOk",
+                "module": "core",
+                "action": "setvalue",
+                "options": {
+                  "value": {
+                    "success": true,
+                    "message": "Thank you - your message was received."
+                  }
+                },
+                "output": true,
+                "outputType": "object"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

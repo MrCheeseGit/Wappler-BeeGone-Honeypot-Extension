@@ -1,0 +1,28 @@
+{
+  "name": "wappler-beegone-honeypot",
+  "version": "1.0.4",
+  "description": "Wappler honeypot extension (App Connect + Server Connect) to trap form spam bots",
+  "main": "beegone.js",
+  "homepage": "https://www.mrcheese.co.uk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrCheeseGit/Wappler-BeeGone-Honeypot-Extension.git"
+  },
+  "keywords": [
+    "wappler",
+    "wappler-extension",
+    "server-connect",
+    "app-connect",
+    "honeypot",
+    "spam",
+    "form",
+    "security",
+    "mrcheese"
+  ],
+  "author": "Mr Cheese",
+  "license": "SEE LICENSE IN LICENSE",
+  "wappler": {
+    "module": "beegone",
+    "version": "1.0.4"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "id": "beegone-honeypot",
+  "name": "BeeGone Honeypot",
+  "version": "1.0.4",
+  "cloneDir": "Wappler-BeeGone-Honeypot-Extension",
+  "hasServerConnect": true,
+  "hasAppConnect": true,
+  "readme": "https://github.com/MrCheeseGit/Wappler-BeeGone-Honeypot-Extension#installation",
+  "serverConnect": {
+    "directories": [
+      "extensions/server_connect/modules",
+      "lib/modules"
+    ],
+    "copy": [
+      {
+        "src": "beegone.js",
+        "dest": "lib/modules/beegone.js"
+      },
+      {
+        "src": "beegone.js",
+        "dest": "extensions/server_connect/modules/beegone.js"
+      },
+      {
+        "src": "beegone_validate.hjson",
+        "dest": "extensions/server_connect/modules/beegone_validate.hjson"
+      }
+    ],
+    "notes": [
+      "Copy beegone.js to both lib/modules/ and extensions/server_connect/modules/.",
+      "Quit Wappler completely and restart."
+    ]
+  },
+  "appConnect": {
+    "directories": [
+      "extensions/app_connect/components",
+      "public/js",
+      "public/css"
+    ],
+    "copy": [
+      {
+        "src": "app_connect/components.hjson",
+        "dest": "extensions/app_connect/components/beegone_components.hjson"
+      },
+      {
+        "src": "app_connect/includes/dmx-beegone-honeypot.js",
+        "dest": "public/js/dmx-beegone-honeypot.js"
+      },
+      {
+        "src": "app_connect/includes/dmx-beegone-honeypot.css",
+        "dest": "public/css/dmx-beegone-honeypot.css"
+      }
+    ],
+    "notes": [
+      "Place dmx-beegone-honeypot inside each form on the page.",
+      "npm users: run the Mr Cheese npm install assistant copy script after npm install (Project Updater alone is not enough).",
+      "Quit Wappler completely and reopen."
+    ]
+  }
+}

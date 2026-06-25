@@ -1,0 +1,29 @@
+<!-- BeeGone honeypot inside a Wappler form (App Connect) -->
+<form id="contactForm" method="post" is="dmx-serverconnect-form" dmx-on:submit="scContact.submit()">
+  <div class="mb-3">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+  </div>
+  <div class="mb-3">
+    <label for="message">Message</label>
+    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+  </div>
+
+  <!-- One BeeGone component per form. field-name must match $_POST bindings on the API. -->
+  <dmx-beegone-honeypot
+    id="contact"
+    field-name="beegone_contact"
+    timestamp-field-name="beegone_ts_contact"
+    min-seconds="3"
+    design-label="Leave empty">
+    <div class="beegone-hp-wrap" aria-hidden="true">
+      <label class="beegone-hp-label" for="beegone_contact_input">Leave empty</label>
+      <input type="text" name="beegone_contact" id="beegone_contact_input" class="beegone-hp-field" tabindex="-1" autocomplete="off" inputmode="text" value="">
+      <input type="hidden" name="beegone_ts_contact" id="beegone_ts_contact_input" class="beegone-ts-field" value="">
+    </div>
+  </dmx-beegone-honeypot>
+
+  <button type="submit" class="btn btn-primary">Send</button>
+</form>
+
+<dmx-serverconnect id="scContact" url="/api/contact/submit" noload></dmx-serverconnect>
